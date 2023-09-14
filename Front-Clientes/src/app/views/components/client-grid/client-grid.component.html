@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Clients
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>Nationality</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of displayedClients">
+            <td>{{ client.name }}</td>
+            <td>{{ client.lastName }}</td>
+            <td>{{ client.age }}</td>
+            <td>{{ client.nationality }}</td>
+          </tr>
+          <!-- <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+            <td>Dato 3</td>
+            <td>Dato 4</td>
+            <td>Dato 5</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer">
+      <div class="pagination">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-secondary" (click)="previousPage()" [attr.disabled]="currentPage === 1 ? 'disabled' : null">Anterior</button>
+            </div>
+            <div class="col-md-auto col-sm-auto">
+                <button class="btn btn-primary" (click)="nextPage()" [attr.disabled]="currentPage === totalPages ? 'disabled' : null">Siguiente</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
